@@ -14,6 +14,7 @@
 		6B3B860322C4E7B700F4F342 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3B860122C4E7B700F4F342 /* LaunchScreen.storyboard */; };
 		6B3B860E22C4EEE200F4F342 /* StockSupplementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B860C22C4ED5E00F4F342 /* StockSupplementCell.swift */; };
 		6B3B861022C4F4AF00F4F342 /* AddStockItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B860F22C4F4AF00F4F342 /* AddStockItemViewController.swift */; };
+		6BB43A8822C7A9EF00C8E5A6 /* StockSupplementItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB43A8722C7A9EF00C8E5A6 /* StockSupplementItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6B3B860422C4E7B700F4F342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B3B860C22C4ED5E00F4F342 /* StockSupplementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSupplementCell.swift; sourceTree = "<group>"; };
 		6B3B860F22C4F4AF00F4F342 /* AddStockItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStockItemViewController.swift; sourceTree = "<group>"; };
+		6BB43A8722C7A9EF00C8E5A6 /* StockSupplementItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSupplementItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				6B3B860122C4E7B700F4F342 /* LaunchScreen.storyboard */,
 				6B3B860422C4E7B700F4F342 /* Info.plist */,
 				6B3B860C22C4ED5E00F4F342 /* StockSupplementCell.swift */,
+				6BB43A8722C7A9EF00C8E5A6 /* StockSupplementItem.swift */,
 			);
 			path = MySupplement;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				6B3B861022C4F4AF00F4F342 /* AddStockItemViewController.swift in Sources */,
 				6B3B860E22C4EEE200F4F342 /* StockSupplementCell.swift in Sources */,
+				6BB43A8822C7A9EF00C8E5A6 /* StockSupplementItem.swift in Sources */,
 				6B3B85FB22C4E7B600F4F342 /* ViewController.swift in Sources */,
 				6B3B85F922C4E7B600F4F342 /* AppDelegate.swift in Sources */,
 			);
