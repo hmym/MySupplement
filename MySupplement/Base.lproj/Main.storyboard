@@ -97,9 +97,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="supplementHowto" destination="0yK-dU-a3H" id="twh-V0-NEY"/>
                                             <outlet property="supplementName" destination="GYX-aK-euk" id="Bo8-tY-Jhm"/>
+                                            <outlet property="supplementStockNumber" destination="6AJ-Vh-pcJ" id="l29-dv-LiO"/>
                                             <outlet property="supplementThumdnail" destination="iKw-ue-ARu" id="QIf-9l-eAD"/>
-                                            <outlet property="suppulementStockTitle" destination="EG9-iS-Pci" id="2qv-Zv-3qq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -145,17 +146,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfR-hu-5yB">
-                                <rect key="frame" x="217" y="264" width="25" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfR-hu-5yB">
+                                <rect key="frame" x="217" y="264" width="97" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addStockItemName:" destination="YTx-NE-ahY" eventType="editingDidEnd" id="WcY-9M-FRK"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q74-ad-073">
-                                <rect key="frame" x="217" y="359" width="25" height="29"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q74-ad-073">
+                                <rect key="frame" x="217" y="359" width="97" height="29"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addStockItemNumber:" destination="YTx-NE-ahY" eventType="editingDidEnd" id="usa-nP-9QY"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnc-xO-9jC">
                                 <rect key="frame" x="78" y="264" width="106" height="30"/>
@@ -184,6 +191,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addStockItemHowto:" destination="YTx-NE-ahY" eventType="editingDidEnd" id="uo4-7U-bzU"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="飲み方" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vT-Hu-eqj">
                                 <rect key="frame" x="78" y="311" width="106" height="30"/>
@@ -226,6 +236,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G4-XX-Kat" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YTx-NE-ahY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="724.63768115942037" y="-98.4375"/>
         </scene>

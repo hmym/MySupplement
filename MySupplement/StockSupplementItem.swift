@@ -9,6 +9,16 @@
 import Foundation
 
 class StockSupplementItem {
-    let titles = ["ビタミンB", "ビタミンC", "ビタミンE"]
-    let images = ["B-50", "C-1000", "E-1000"]
+
+    var addStockItemName : String = ""
+    var addStockItemHowto : String = ""
+    var addStockItemNumber : String = ""
+    var addStockItemImage : String = ""
+    init(addStockItemName : String, addStockItemHowto : String,
+         addStockItemNumber : String, addStockItemImage : String) {
+        self.addStockItemName = addStockItemName
+        self.addStockItemHowto = addStockItemHowto
+        self.addStockItemNumber = addStockItemNumber
+        self.addStockItemImage = addStockItemImage
+    }
 }

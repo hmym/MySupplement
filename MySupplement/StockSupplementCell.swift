@@ -12,7 +12,8 @@ class StockSupplementCell: UITableViewCell {
 
     @IBOutlet weak var supplementThumdnail: UIImageView!
     @IBOutlet weak var supplementName: UILabel!
-    @IBOutlet weak var suppulementStockTitle: UILabel!
+    @IBOutlet weak var supplementHowto: UILabel!
+    @IBOutlet weak var supplementStockNumber: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

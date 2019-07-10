@@ -10,9 +10,16 @@ import UIKit
 
 class AddStockItemViewController: UIViewController {
 
+    @IBAction func addStockItemName(_ sender: Any) {
+    }
+    @IBAction func addStockItemHowto(_ sender: Any) {
+    }
+    @IBAction func addStockItemNumber(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        var name = StockSupplementItem(name: "addStockItemName")
+        
         // Do any additional setup after loading the view.
     }
     
