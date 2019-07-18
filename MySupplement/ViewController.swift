@@ -10,12 +10,7 @@ import UIKit
 import RealmSwift
 //UITableViewDelegate, UITableViewDataSourceのプロトコルを実装する旨の宣言を行う
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    // StockSupplementItemクラスをitemに代入
-    let item = StockSupplementItem(addStockItemName: "ビタミンB", addStockItemHowto: "1時間１錠", addStockItemNumber: "3", addStockItemImage: "B-50")
-    // StockSupplementItemクラスをitemCに代入
-    let itemC = StockSupplementItem(addStockItemName: "ビタミンC", addStockItemHowto: "1日１錠", addStockItemNumber: "3", addStockItemImage: "C-1000")
-    // StockSupplementItemクラスをitemEに代入
-    let itemE = StockSupplementItem(addStockItemName: "ビタミンE", addStockItemHowto: "1日3錠", addStockItemNumber: "3", addStockItemImage: "E-1000")
+  
     // itemesに空の配列を代入
     var items : Array<StockSupplementItem> = []
     
@@ -30,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     // テーブルの行数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return items.count
     }
     // テーブルの行ごとのセルを返す
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = stockSupplementList.dequeueReusableCell(withIdentifier: "stockSupplementCell") as! StockSupplementCell
         // セルのimageに商品画像をセット
         cell.supplementThumdnail.image = UIImage(named: items[indexPath.row].addStockItemImage)
-        // 商品名にitemse[]のaddStockItemNameをセット
+//         商品名にitemse[]のaddStockItemNameをセット
         cell.supplementName.text = items[indexPath.row].addStockItemName
         // 飲み方にitemse[]のaddStockItemHowtoをセット
         cell.supplementHowto.text = items[indexPath.row].addStockItemHowto
@@ -49,15 +44,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 
-    
+    // 画面を起動した時に一度だけ呼ばれる
     override func viewDidLoad() {
         super.viewDidLoad()
         stockSupplementList.delegate = self
         stockSupplementList.dataSource = self
-        // realmを使うと宣言する
-        let realm = try! Realm()
+        
+
         // 配列itemsにitemを入れる
-        items = [item, itemC, itemE]
+//        items = [vitaminB]
+//        items = [item, itemC, itemE]
+    }
+    
+    // ライフサイクル　戻ってきた時に呼ばれる処理
+    override func viewWillAppear(_ animated: Bool) {
+        // realmのインスタンスを生成する
+        let realm = try! Realm()
+        // resultにStockSupplementItemクラスの値を代入
+        let result = realm.objects(StockSupplementItem.self)
+        // resultを配列に入れてitemsに代入
+        items = Array(result)
+        //tableViewを再描画する
+        stockSupplementList.reloadData()
     }
 
 

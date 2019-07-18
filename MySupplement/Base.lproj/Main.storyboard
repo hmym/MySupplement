@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="-64.285714285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Stock Item View Controller-->
         <scene sceneID="s48-Gn-Rul">
             <objects>
-                <viewController storyboardIdentifier="addStockItem" id="qHH-sy-mcH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addStockItem" id="qHH-sy-mcH" customClass="AddStockItemViewController" customModule="MySupplement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cvh-tC-bQc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,6 +204,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-eQ-DUx">
                                 <rect key="frame" x="159" y="418" width="96" height="60"/>
                                 <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="addStockItemSaveTapped:" destination="YTx-NE-ahY" eventType="touchUpInside" id="Bnk-DB-SjI"/>
+                                    <action selector="addStockItemSaveTapped:" destination="qHH-sy-mcH" eventType="touchUpInside" id="pzF-S6-of2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.29951584507042256" alpha="1" colorSpace="calibratedRGB"/>
@@ -234,6 +238,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Dl-nM-Wct"/>
                     </view>
+                    <connections>
+                        <outlet property="inputAddStockHowto" destination="S1K-48-ikM" id="KRf-cQ-dFf"/>
+                        <outlet property="inputAddStockItemName" destination="DfR-hu-5yB" id="cua-Lw-LVx"/>
+                        <outlet property="inputAddStockNumber" destination="q74-ad-073" id="SlF-Sc-0Tb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G4-XX-Kat" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="YTx-NE-ahY" userLabel="Exit" sceneMemberID="exit"/>
