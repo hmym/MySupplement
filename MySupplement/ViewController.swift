@@ -43,6 +43,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if(editingStyle == UITableViewCell.EditingStyle.delete) {
+            // Realm内のデータを削除
+            do{
+                let realm = try Realm()
+                try realm.write {
+                    realm.delete(items[indexPath.row])
+                }
+                // itemsはデータソースです。
+                self.items.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            }catch{
+            }
+        }
+    }
 
     // 画面を起動した時に一度だけ呼ばれる
     override func viewDidLoad() {
@@ -51,13 +66,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         stockSupplementList.dataSource = self
         
 
-        // 配列itemsにitemを入れる
-//        items = [vitaminB]
-//        items = [item, itemC, itemE]
     }
     
     // ライフサイクル　戻ってきた時に呼ばれる処理
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         // realmのインスタンスを生成する
         let realm = try! Realm()
         // resultにStockSupplementItemクラスの値を代入
@@ -67,7 +80,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //tableViewを再描画する
         stockSupplementList.reloadData()
     }
-
 
 }
 
