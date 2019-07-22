@@ -18,6 +18,11 @@ class AddStockItemViewController: UIViewController {
     // tablecellをタップした時に詳細画面に遷移する
     // 在庫数を減らせる機能をつける（長押しするとダイアログ、マイナスボタンをつける？）
     
+    // Cancelボタンが押された時の処理
+    @IBAction func cancelAddStock(_ sender: Any) {
+        // 一つ前の画面に戻る
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var inputAddStockItemName: UITextField!
     @IBOutlet weak var inputAddStockHowto: UITextField!
     @IBOutlet weak var inputAddStockNumber: UITextField!

@@ -177,7 +177,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在庫数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thj-ex-AGk">
-                                <rect key="frame" x="78" y="359" width="106" height="27"/>
+                                <rect key="frame" x="78" y="359" width="106" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="MjW-HV-u0T"/>
                                 </constraints>
@@ -202,13 +202,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-eQ-DUx">
-                                <rect key="frame" x="159" y="418" width="96" height="60"/>
+                                <rect key="frame" x="159" y="419" width="96" height="30"/>
                                 <state key="normal" title="保存"/>
                                 <connections>
                                     <action selector="addStockItemSaveTapped:" destination="YTx-NE-ahY" eventType="touchUpInside" id="Bnk-DB-SjI"/>
                                     <action selector="addStockItemSaveTapped:" destination="qHH-sy-mcH" eventType="touchUpInside" id="pzF-S6-of2"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okM-1c-WE8">
+                                <rect key="frame" x="0.0" y="53" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="add Supplement" id="GXf-z8-RZc">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="wkz-Yb-nk6">
+                                            <connections>
+                                                <action selector="cancelAddStock:" destination="qHH-sy-mcH" id="Yh6-R7-Bay"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.29951584507042256" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -238,6 +251,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Dl-nM-Wct"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="B1Y-HO-V8x"/>
+                        <barButtonItem title="Item" id="x24-6T-TjE"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="inputAddStockHowto" destination="S1K-48-ikM" id="KRf-cQ-dFf"/>
                         <outlet property="inputAddStockItemName" destination="DfR-hu-5yB" id="cua-Lw-LVx"/>
@@ -247,7 +265,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6G4-XX-Kat" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="YTx-NE-ahY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="724.63768115942037" y="-98.4375"/>
+            <point key="canvasLocation" x="628" y="-101"/>
         </scene>
     </scenes>
 </document>

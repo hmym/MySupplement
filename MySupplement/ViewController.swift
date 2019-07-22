@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = stockSupplementList.dequeueReusableCell(withIdentifier: "stockSupplementCell") as! StockSupplementCell
         // セルのimageに商品画像をセット
         cell.supplementThumdnail.image = UIImage(named: items[indexPath.row].addStockItemImage)
-//         商品名にitemse[]のaddStockItemNameをセット
+        //  商品名にitemse[]のaddStockItemNameをセット
         cell.supplementName.text = items[indexPath.row].addStockItemName
         // 飲み方にitemse[]のaddStockItemHowtoをセット
         cell.supplementHowto.text = items[indexPath.row].addStockItemHowto
