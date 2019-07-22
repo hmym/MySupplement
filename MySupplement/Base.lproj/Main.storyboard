@@ -203,6 +203,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-eQ-DUx">
                                 <rect key="frame" x="159" y="419" width="96" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.62293683980000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="保存"/>
                                 <connections>
                                     <action selector="addStockItemSaveTapped:" destination="YTx-NE-ahY" eventType="touchUpInside" id="Bnk-DB-SjI"/>
@@ -222,6 +223,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbG-dj-Dvc">
+                                <rect key="frame" x="217" y="206" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="写真を選択する"/>
+                                <connections>
+                                    <action selector="inputAddStockPhotoImage:" destination="qHH-sy-mcH" eventType="touchUpInside" id="2l7-Qc-Rmc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.29951584507042256" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

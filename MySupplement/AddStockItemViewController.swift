@@ -6,22 +6,35 @@
 //  Copyright © 2019 濱山知香. All rights reserved.
 //
 
+// 戻るボタンを作る
+// delete機能をつける（UIを削除した時点でrealmのデータも削除）
+// 画像を保存できる機能をつける
+// tablecellをタップした時に詳細画面に遷移する
+// 在庫数を減らせる機能をつける（長押しするとダイアログ、マイナスボタンをつける？）
+
 import UIKit
 // realmswiftを追加しないとrealmが使えない
 import RealmSwift
+import AssetsLibrary
 
-class AddStockItemViewController: UIViewController {
-    
-    // 戻るボタンを作る
-    // delete機能をつける（UIを削除した時点でrealmのデータも削除）
-    // 画像を保存できる機能をつける
-    // tablecellをタップした時に詳細画面に遷移する
-    // 在庫数を減らせる機能をつける（長押しするとダイアログ、マイナスボタンをつける？）
+class AddStockItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Cancelボタンが押された時の処理
     @IBAction func cancelAddStock(_ sender: Any) {
         // 一つ前の画面に戻る
         self.dismiss(animated: true, completion: nil)
+    }
+    // 写真を選択するボタンを押した時の処理
+    @IBAction func inputAddStockPhotoImage(_ sender: Any) {
+        // アルバム起動！
+        let album = UIImagePickerController.SourceType.photoLibrary
+        if UIImagePickerController.isSourceTypeAvailable(album) {
+            let album = UIImagePickerController()
+            album.delegate = self
+            album.sourceType = UIImagePickerController.SourceType.photoLibrary
+            album.allowsEditing = true
+            self.present(album, animated: true, completion: nil)
+        }
     }
     @IBOutlet weak var inputAddStockItemName: UITextField!
     @IBOutlet weak var inputAddStockHowto: UITextField!

@@ -8,8 +8,10 @@
 
 import UIKit
 import RealmSwift
+import AssetsLibrary
+
 //UITableViewDelegate, UITableViewDataSourceのプロトコルを実装する旨の宣言を行う
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
     // itemesに空の配列を代入
     var items : Array<StockSupplementItem> = []
