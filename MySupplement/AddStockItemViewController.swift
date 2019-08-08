@@ -46,14 +46,14 @@ class AddStockItemViewController: UIViewController, UIImagePickerControllerDeleg
         let howto = inputAddStockHowto.text!
         let number = inputAddStockNumber.text!
         // image:カメラアプリから画像を持ってくる
-        //let image = inputAddStockImage.image!
+//        let image = inputAddStockPhotoImage.image!
         
         //         オブジェクトを作成
         let item = StockSupplementItem();
         item.addStockItemName = name;
         item.addStockItemHowto = howto;
         item.addStockItemNumber = number;
-        // item.addStockItemImage = image;
+//        item.inputAddStockPhotoImage = image;
         
         // Realmのインスタンスを生成する
         let realm = try! Realm()
@@ -63,7 +63,9 @@ class AddStockItemViewController: UIViewController, UIImagePickerControllerDeleg
             realm.add(item)
         }
         //モーダルの画面を閉じる
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        // NavigationBarを閉じる
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {

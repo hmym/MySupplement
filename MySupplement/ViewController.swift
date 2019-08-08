@@ -8,10 +8,9 @@
 
 import UIKit
 import RealmSwift
-import AssetsLibrary
 
 //UITableViewDelegate, UITableViewDataSourceのプロトコルを実装する旨の宣言を行う
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     // itemesに空の配列を代入
     var items : Array<StockSupplementItem> = []
@@ -23,7 +22,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Storybordで指定したaddStockItemをaddStockItemViewControllerに代入
         let addStockItemViewController = storyboard!.instantiateViewController(withIdentifier: "addStockItem")
         // モーダルでaddStockItemViewControllerが出現
-        self.present(addStockItemViewController, animated: true, completion: nil)
+//        self.present(addStockItemViewController, animated: true, completion: nil)
+        
+        performSegue(withIdentifier: "addStockItem", sender: nil
+        )
     }
     // テーブルの行数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         stockSupplementList.delegate = self
         stockSupplementList.dataSource = self
-        
+        self.title = "My Supplement"
 
     }
     
