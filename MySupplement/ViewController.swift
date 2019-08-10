@@ -20,10 +20,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // addボタンをタップした時に呼ばれる処理
     @IBAction func addStockItem(_ sender: Any) {
         // Storybordで指定したaddStockItemをaddStockItemViewControllerに代入
-        let addStockItemViewController = storyboard!.instantiateViewController(withIdentifier: "addStockItem")
+//        let addStockItemViewController = storyboard!.instantiateViewController(withIdentifier: "addStockItem")
         // モーダルでaddStockItemViewControllerが出現
 //        self.present(addStockItemViewController, animated: true, completion: nil)
         
+        // addボタンを押すとaddStockItem画面に遷移する
         performSegue(withIdentifier: "addStockItem", sender: nil
         )
     }

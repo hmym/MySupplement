@@ -20,22 +20,49 @@ import AssetsLibrary
 class AddStockItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Cancelボタンが押された時の処理
-    @IBAction func cancelAddStock(_ sender: Any) {
+//    @IBAction func cancelAddStock(_ sender: Any) {
         // 一つ前の画面に戻る
-        self.dismiss(animated: true, completion: nil)
-    }
+//        self.dismiss(animated: true, completion: nil)
+//    }
     // 写真を選択するボタンを押した時の処理
-    @IBAction func inputAddStockPhotoImage(_ sender: Any) {
+//    @IBAction func inputAddStockPhotoImage(_ sender: Any) {
         // アルバム起動！
-        let album = UIImagePickerController.SourceType.photoLibrary
-        if UIImagePickerController.isSourceTypeAvailable(album) {
-            let album = UIImagePickerController()
-            album.delegate = self
-            album.sourceType = UIImagePickerController.SourceType.photoLibrary
-            album.allowsEditing = true
-            self.present(album, animated: true, completion: nil)
+//        let album = UIImagePickerController.SourceType.photoLibrary
+//        if UIImagePickerController.isSourceTypeAvailable(album) {
+//            let album = UIImagePickerController()
+//            album.delegate = self
+//            album.sourceType = UIImagePickerController.SourceType.photoLibrary
+//            album.allowsEditing = true
+//            self.present(album, animated: true, completion: nil)
+//        }
+//    }
+    // カメラボタンがタップされたときに実行される処理
+    @IBAction func cameraButtonAction(_ sender: Any) {
+        // カメラが利用できるか判定する
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("カメラを利用できます")
+            // UIImagePickerControllerのインスタンスを生成
+            let imagePickerController = UIImagePickerController()
+            // sorceTypeにカメラを設定
+            imagePickerController.sourceType = .camera
+            // 通知先を自分自身に設定
+            imagePickerController.delegate = self
+            // モーダルビューで表示
+            present(imagePickerController, animated: true, completion: nil)
+        } else {
+            print("カメラを利用できません")
         }
     }
+    
+    // 撮影が終わった時に呼ばれるdelegateメソッド
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 撮影した写真を、配置したpictureImageに渡す
+        inputAddStockImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        // モーダルビューを閉じる
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var inputAddStockImage: UIImageView!
     @IBOutlet weak var inputAddStockItemName: UITextField!
     @IBOutlet weak var inputAddStockHowto: UITextField!
     @IBOutlet weak var inputAddStockNumber: UITextField!
@@ -46,7 +73,7 @@ class AddStockItemViewController: UIViewController, UIImagePickerControllerDeleg
         let howto = inputAddStockHowto.text!
         let number = inputAddStockNumber.text!
         // image:カメラアプリから画像を持ってくる
-//        let image = inputAddStockPhotoImage.image!
+//        let image = inputAddStockPhotoImage.UIImage!
         
         //         オブジェクトを作成
         let item = StockSupplementItem();
