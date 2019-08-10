@@ -38,20 +38,21 @@ class AddStockItemViewController: UIViewController, UIImagePickerControllerDeleg
 //    }
     // カメラボタンがタップされたときに実行される処理
     @IBAction func cameraButtonAction(_ sender: Any) {
-        // カメラが利用できるか判定する
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            print("カメラを利用できます")
-            // UIImagePickerControllerのインスタンスを生成
-            let imagePickerController = UIImagePickerController()
-            // sorceTypeにカメラを設定
-            imagePickerController.sourceType = .camera
-            // 通知先を自分自身に設定
-            imagePickerController.delegate = self
-            // モーダルビューで表示
-            present(imagePickerController, animated: true, completion: nil)
-        } else {
-            print("カメラを利用できません")
-        }
+        // カメラかフォトライブラリーどちらから画像を取得するか選択
+        let alertController = UIAlertController(title: "確認", message: "選択してください", preferredStyle: .actionSheet)
+        // カメラを起動するための選択肢を定義
+        let cameraAction = UIAlertAction(title: "カメラ", style: .default, handler: nil)
+        alertController.addAction(cameraAction)
+        // フォトライブラリーを起動するための選択肢を定義
+        let photoLibralyAction = UIAlertAction(title: "フォトライブラリー", style: .default, handler: nil)
+        alertController.addAction(photoLibralyAction)
+        // キャンセルの選択肢を定義
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        // iPadで落ちてしまう対策
+        alertController.popoverPresentationController?.sourceView = view
+        // 選択肢を画面に表示
+        present(alertController, animated: true, completion: nil)
     }
     
     // 撮影が終わった時に呼ばれるdelegateメソッド
